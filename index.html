@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Eres mi Stitch? 💙</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #d81b60;
+      font-size: 2.8em;
+    }
+
+    h2 {
+      color: #6a1b9a;
+      margin-top: 40px;
+      font-size: 2em;
+    }
+
+    button {
+      font-size: 1.2em;
+      padding: 10px 25px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      position: relative;
+    }
+
+    .yes-btn {
+      background-color: #64b5f6;
+      color: white;
+    }
+
+    .yes-btn:hover {
+      background-color: #42a5f5;
+    }
+
+    .no-btn {
+      background-color: #ef9a9a;
+      color: white;
+      position: absolute;
+    }
+
+    #stitch-img {
+      margin-top: 30px;
+      display: none;
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    #audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Eres la mejor del mundo 💖</h1>
+  <h2>¿Eres mi Stitch?</h2>
+
+  <button class="yes-btn" onclick="mostrarStitch()">Sí 💙</button>
+  <button class="no-btn" id="noBtn" onmouseover="moverBoton()">No 😢</button>
+
+  <div>
+    <img id="stitch-img" src="https://i.pinimg.com/originals/8f/84/ce/8f84ce9c5a7edaa63d11365ae5440e50.gif" alt="Stitch con corazones">
+  </div>
+
+  <audio id="audio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" autoplay loop></audio>
+
+  <script>
+    function mostrarStitch() {
+      document.getElementById('stitch-img').style.display = 'block';
+      document.getElementById('audio').play();
+    }
+
+    function moverBoton() {
+      const noBtn = document.getElementById('noBtn');
+      const x = Math.floor(Math.random() * (window.innerWidth - 100));
+      const y = Math.floor(Math.random() * (window.innerHeight - 100));
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    }
+  </script>
+
+</body>
+</html>
